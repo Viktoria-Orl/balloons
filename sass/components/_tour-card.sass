@@ -1,0 +1,131 @@
+.card-tour
+    height: 52rem
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    @media only screen and (max-width: 900px), (hover:none)
+        height: auto
+    &__side
+        border-radius: .3rem
+        overflow: hidden
+        height: 52rem
+        transition: .7s all ease-out
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        box-shadow: $box-shadow
+        @media only screen and (max-width: 900px), (hover:none)
+            height: auto
+            position: relative
+        &_front
+            background: $color-white
+            @media only screen and (max-width: 900px), (hover:none)
+                padding-bottom: 8rem
+        &_back
+            transform: rotateY(180deg)
+            background: linear-gradient(135deg, $color-brown-light 3.65%, $color-brown-dark 100%)
+            @media only screen and (max-width: 900px), (hover:none)
+                transform: rotateY(0deg)
+                padding: 10rem 5rem 5rem 5rem
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+                margin-top: -12rem
+    &:hover &__side_front
+        transform: rotateY(-180deg)
+        @include respond(tap-port)
+            transform: rotateY(0deg)
+    &:hover &__side_back
+        transform: rotateY(0deg)
+
+    &__img
+        height: 24.5rem
+        background-blend-mode: hard-light
+        clip-path: $rectangle
+        margin-bottom: 4.5rem
+        &_1
+            background: $color-brown-light url(../img/card-1.jpg) center / cover no-repeat
+            @media (min-resolution: 192dpi) and (min-width: 341px), (min-width: 682px)
+                background: $color-brown-light url(../img/card-1-big.jpg) center / cover no-repeat
+        &_2
+            background: $color-brown-light url(../img/card-2.jpg) center / cover no-repeat
+            @media (min-resolution: 192dpi) and (min-width: 340px), (min-width: 680px)
+                background: $color-brown-light url(../img/card-2-big.jpg) center / cover no-repeat
+        &_3
+            background: $color-brown-light url(../img/card-3.jpg) center / cover no-repeat
+            @media (min-resolution: 192dpi) and (min-width: 340px), (min-width: 680px)
+                background: $color-brown-light url(../img/card-3-big.jpg) center / cover no-repeat
+        @media only screen and (max-width: 900px), (hover:none)
+            height: 30rem
+            margin-bottom: 5.5rem
+    &__title
+        font-size: 2.8rem
+        letter-spacing: .2rem
+        text-transform: uppercase
+        font-weight: 300
+        text-align: right
+        color: $color-white
+        position: absolute
+        top: 17.6rem
+        right: 0
+        @include respond(tap-port)
+            top: 25rem
+            font-size: 3.5rem
+    &__span
+        background: linear-gradient(90deg, $color-brown-light 3.65%, $color-brown-dark 100%)
+        padding: 1rem 2rem
+        &_1
+            padding-bottom: 0
+        &_2
+            position: absolute
+            top: 3.3rem
+            right: 0
+            padding-top: 0.1rem
+            @include respond(tap-port)
+                top: 4rem
+    &__descr
+        
+        ul
+            list-style: none
+            padding-bottom: 5.5rem
+            text-align: center
+
+            @include respond(tap-port)
+                padding-bottom: 3.5rem
+                width: 75%
+                margin: 0 auto
+            li
+                font-weight: 700
+                text-decoration: underline
+                text-underline-offset: .4rem
+                display: inline-block
+                &:not(:last-child)
+                    margin-bottom: 2rem
+                @include respond(tab-land)
+                    font-size: 1.4rem
+                @include respond(tap-port)
+                    font-size: 1.6rem
+
+    &__backSide-box
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        text-align: center
+        @media only screen and (max-width: 900px), (hover:none)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%, 0%)
+            text-align: center
+            
+    &__text
+        color: $color-white
+        text-transform: uppercase
+        text-align: center
+        margin-bottom: 8.7rem
+        &_1
+            font-weight: 300
+        &_2
+            font-weight: 500
+            font-size: 6rem

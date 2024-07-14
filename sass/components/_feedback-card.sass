@@ -1,0 +1,59 @@
+.feedback-card
+    width: 92.7%
+    background: rgba($color-white, .85)
+    box-shadow: $box-shadow
+    margin: 0 auto
+    padding: 5rem 17rem
+    transform: skewX(330deg)
+    @include respond(tab-land)
+        padding: 3.5rem 9rem
+        width: 82%
+        text-align: center
+    @include respond(tap-port)
+        transform: skewX(350deg)
+        padding: 3rem 3rem
+    & > *
+        transform: skewX(-330deg)
+        @include respond(tap-port)
+            transform: skewX(-350deg)
+
+
+
+    &__img
+        width: 16.7rem
+        height: 16.7rem
+        background: green
+        float: left
+        border-radius: 100rem
+        shape-outside: circle(50% at 50% 50%)
+        -webkit-shape-outside: circle(50% at 50% 50%)
+        margin-right: 4rem
+        overflow: hidden
+        position: relative
+        @include respond(tap-port)
+            float: none
+            margin: 0 auto
+            margin-bottom: 1rem
+        img
+            width: 100%
+            transform: scale(1.15)
+            transition: all .5s
+
+    &__name
+        text-align: center
+        font-size: 2.4rem
+        color: $color-white
+        text-transform: uppercase
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-20%)
+        opacity: 0
+        transition: all .5s
+    &:hover &__name
+        transform: translate(-50%,-50%)
+        opacity: 1
+    &:hover img
+        transform: scale(1)
+        filter: blur(.3rem) brightness(80%)
+
